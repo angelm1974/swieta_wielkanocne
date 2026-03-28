@@ -1,0 +1,53 @@
+<main class="page" aria-label="Wielkanocna opowieść">
+  <header class="hero">
+    <p class="hero__kicker">Święta Wielkanocne</p>
+    <h1>{{ heading() }}</h1>
+    <p class="hero__intro">{{ intro() }}</p>
+  </header>
+
+  <section class="cards" aria-label="Wielkanocne wartości">
+    @for (item of blessings(); track item.title) {
+    <article class="card">
+      <h2>{{ item.title }}</h2>
+      <p>{{ item.detail }}</p>
+    </article>
+    }
+  </section>
+
+  <section class="chicks" aria-label="Wiosenne pisklaki">
+    <h2>Kurczaki zwiastujące wiosnę</h2>
+    <div class="chicks__grid">
+      @for (chick of chicks(); track chick.name) {
+        <article class="chick-card">
+          <div class="chick" role="img" aria-label="Wielkanocny kurczak">
+            <span class="chick__wing chick__wing--left" aria-hidden="true"></span>
+            <span class="chick__wing chick__wing--right" aria-hidden="true"></span>
+            <span class="chick__beak" aria-hidden="true"></span>
+            <span class="chick__feet" aria-hidden="true"></span>
+          </div>
+          <h3>{{ chick.name }}</h3>
+          <p>{{ chick.message }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="traditions" aria-labelledby="traditions-title">
+    <div class="traditions__content">
+      <h2 id="traditions-title">Przepisy na świąteczny spokój</h2>
+      <ul>
+        @for (point of traditions(); track point) {
+        <li>
+          <span class="marker" aria-hidden="true"></span>
+          <p>{{ point }}</p>
+        </li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="wish" aria-live="polite">
+    <h2>Wielkanocne życzenia</h2>
+    <p>{{ wish() }}</p>
+  </section>
+</main>
