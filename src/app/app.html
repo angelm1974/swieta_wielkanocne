@@ -18,16 +18,16 @@
     <h2>Kurczaki zwiastujące wiosnę</h2>
     <div class="chicks__grid">
       @for (chick of chicks(); track chick.name) {
-        <article class="chick-card">
-          <div class="chick" role="img" aria-label="Wielkanocny kurczak">
-            <span class="chick__wing chick__wing--left" aria-hidden="true"></span>
-            <span class="chick__wing chick__wing--right" aria-hidden="true"></span>
-            <span class="chick__beak" aria-hidden="true"></span>
-            <span class="chick__feet" aria-hidden="true"></span>
-          </div>
-          <h3>{{ chick.name }}</h3>
-          <p>{{ chick.message }}</p>
-        </article>
+      <article class="chick-card">
+        <div class="chick" role="img" aria-label="Wielkanocny kurczak">
+          <span class="chick__wing chick__wing--left" aria-hidden="true"></span>
+          <span class="chick__wing chick__wing--right" aria-hidden="true"></span>
+          <span class="chick__beak" aria-hidden="true"></span>
+          <span class="chick__feet" aria-hidden="true"></span>
+        </div>
+        <h3>{{ chick.name }}</h3>
+        <p>{{ chick.message }}</p>
+      </article>
       }
     </div>
   </section>
